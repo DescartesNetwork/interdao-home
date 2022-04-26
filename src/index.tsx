@@ -1,10 +1,11 @@
 import { render } from "react-dom";
 import { HashRouter } from "react-router-dom";
-
 import { Provider } from "react-redux";
-import App from "App";
-import store from "store";
+
 import { ConfigProvider } from "antd";
+import App from "app";
+
+import store from "store";
 
 render(
   <Provider store={store}>
