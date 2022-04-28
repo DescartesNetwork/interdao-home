@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import { Affix, Col, Row } from "antd";
+import { Col, Row } from "antd";
 import Home from "./home";
 import Header from "./header";
 
@@ -12,6 +12,8 @@ import "static/styles/dark.less";
 import "static/styles/light.less";
 
 import "./index.less";
+import Watcher from "./watcher";
+import Footer from "./footer";
 
 const App = () => {
   const pageStyles = {
@@ -27,9 +29,7 @@ const App = () => {
   return (
     <Row>
       <Col span={24}>
-        <Affix>
-          <Header />
-        </Affix>
+        <Header />
       </Col>
       <Col span={24}>
         <Row style={{ ...pageStyles }}>
@@ -41,7 +41,10 @@ const App = () => {
           </Col>
         </Row>
       </Col>
-      <Col span={24}>{/* <Footer /> */}</Col>
+      <Col span={24}>
+        <Footer />
+      </Col>
+      <Watcher />
     </Row>
   );
 };

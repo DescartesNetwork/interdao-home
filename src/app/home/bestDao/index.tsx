@@ -1,5 +1,6 @@
-import { Space, Typography } from "antd";
-import IonIcon from "components/icon";
+import { Col, Row, Space, Typography } from "antd";
+import HeaderSection from "app/components/headerSection";
+import IonIcon from "app/components/icon";
 
 const BEST_DAOS = [
   { logo: "logo-mango", content: "Mango" },
@@ -24,11 +25,18 @@ const TagDao = ({ logo, content }: TagDaoProps) => {
 
 const BestDao = () => {
   return (
-    <Space size={24}>
-      {BEST_DAOS.map(({ logo, content }, index) => {
-        return <TagDao logo={logo} content={content} key={index} />;
-      })}
-    </Space>
+    <Row gutter={[48, 48]}>
+      <Col span={24}>
+        <HeaderSection title="The Best DAO" />
+      </Col>
+      <Col span={24}>
+        <Space size={24}>
+          {BEST_DAOS.map(({ logo, content }, index) => {
+            return <TagDao logo={logo} content={content} key={index} />;
+          })}
+        </Space>
+      </Col>
+    </Row>
   );
 };
 

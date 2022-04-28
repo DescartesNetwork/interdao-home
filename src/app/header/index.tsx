@@ -1,5 +1,5 @@
-import { Button, Col, Image, Row, Space } from "antd";
-import IonIcon from "components/icon";
+import { Col, Image, Row } from "antd";
+import IonIcon from "app/components/icon";
 
 import LOGO from "static/images/logo.svg";
 
@@ -14,10 +14,7 @@ const Header = () => {
         />
       </Col>
       <Col>
-        <Space size={24}>
-          <IonIcon name="sunny" style={{ fontSize: 28 }} />
-          <Button type="primary">Create a Dao</Button>
-        </Space>
+        <IonIcon name="sunny" style={{ fontSize: 28 }} />
       </Col>
     </Row>
   );
