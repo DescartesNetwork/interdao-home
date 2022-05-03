@@ -3,8 +3,9 @@ import { useSelector } from "react-redux";
 import { Image, Col, Row, Space, Typography } from "antd";
 import IonIcon from "app/components/icon";
 
-import { RootState } from "store";
+import { AppState } from "store";
 import { useMemo } from "react";
+import { INTERDAO_URL } from "app/constants";
 
 type RegimeCardProps = {
   title: string;
@@ -18,7 +19,7 @@ const PADDING_PAGE = 39; // padding 24 + width scroll bar 15
 const RegimeCard = ({ title, desc, bg }: RegimeCardProps) => {
   const {
     ui: { width },
-  } = useSelector((state: RootState) => state);
+  } = useSelector((state: AppState) => state);
 
   const imgHeight = useMemo(() => {
     if (width > 991)
@@ -52,7 +53,10 @@ const RegimeCard = ({ title, desc, bg }: RegimeCardProps) => {
         </Space>
       </Col>
       <Col span={24}>
-        <Space style={{ cursor: "pointer" }}>
+        <Space
+          style={{ cursor: "pointer" }}
+          onClick={() => window.open(INTERDAO_URL, "_blank")}
+        >
           <Typography.Text underline>Get started</Typography.Text>
           <IonIcon name="arrow-forward-outline" />
         </Space>

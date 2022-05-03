@@ -71,10 +71,10 @@ const slice = createSlice({
   reducers: {},
   extraReducers: (builder) =>
     void builder
-      .addCase(
-        setTheme.fulfilled,
-        (state, { payload }) => void Object.assign(state, payload)
-      )
+      .addCase(setTheme.fulfilled, (state, { payload }) => {
+        console.log(payload, 7);
+        void Object.assign(state, payload);
+      })
       .addCase(
         resize.fulfilled,
         (state, { payload }) => void Object.assign(state, payload)
