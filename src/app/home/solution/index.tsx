@@ -1,12 +1,14 @@
 import { useSelector } from "react-redux";
 
-import { Col, Row, Image } from "antd";
+import { Col, Row, Image, Space, Typography } from "antd";
 import HeaderSection from "app/components/headerSection";
 
 import { AppState } from "store";
 
-import SOLUTION_LIGHT from "static/images/solution-light-desktop.png";
-import SOLUTION_DARK from "static/images/solution-dark-desktop.png";
+import multiMachanism from "static/images/multi-machanism.png";
+import "./index.less";
+
+const BLEND_MODE = { dark: "color", light: "difference" };
 
 const Solution = () => {
   const { theme } = useSelector((state: AppState) => state.ui);
@@ -17,10 +19,26 @@ const Solution = () => {
         <HeaderSection title="The Universal DAO Solution for Solana" />
       </Col>
       <Col span={24}>
-        <Image
-          src={theme === "dark" ? SOLUTION_DARK : SOLUTION_LIGHT}
-          preview={false}
-        />
+        <Row className="blend-wrapper">
+          <Col span={24} className="blend-wrapper-image">
+            <Image src={multiMachanism} preview={false} />
+          </Col>
+          <Col
+            span={24}
+            className="blend-wrapper-text blend-mode-lighten root-bg"
+          >
+            <Space direction="vertical">
+              <Typography.Title level={1}>Multiple Mechanism</Typography.Title>
+              <Typography.Title level={1}>Automatic Operation</Typography.Title>
+              <Typography.Title level={1}>---- No Code</Typography.Title>
+            </Space>
+            <Space
+              className={`layered-image-left pointer-events-none blend-mode-${BLEND_MODE[theme]}`}
+            >
+              <div className="root-bg" />
+            </Space>
+          </Col>
+        </Row>
       </Col>
     </Row>
   );
