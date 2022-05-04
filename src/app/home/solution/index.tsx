@@ -30,7 +30,7 @@ const Solution = () => {
             <Space direction="vertical">
               <Typography.Title level={1}>Multiple Mechanism</Typography.Title>
               <Typography.Title level={1}>Automatic Operation</Typography.Title>
-              <Typography.Title level={1}>---- No Code</Typography.Title>
+              <Typography.Title level={1}>____ No Code</Typography.Title>
             </Space>
             <Space
               className={`layered-image-left pointer-events-none blend-mode-${BLEND_MODE[theme]}`}
