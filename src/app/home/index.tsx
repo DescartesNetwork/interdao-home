@@ -7,7 +7,7 @@ import Solution from "./solution";
 
 const Home = () => {
   return (
-    <Row gutter={[172, 172]}>
+    <Row gutter={[0, 172]}>
       <Col span={24}>
         <Banner />
       </Col>

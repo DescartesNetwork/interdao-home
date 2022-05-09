@@ -5,7 +5,8 @@ import HeaderSection from "app/components/headerSection";
 
 import { AppState } from "store";
 
-import multiMachanism from "static/images/multi-machanism.png";
+import multiMechanisms from "static/images/multi-mechanisms.png";
+
 import "./index.less";
 
 const BLEND_MODE = { dark: "color", light: "difference" };
@@ -15,20 +16,20 @@ const Solution = () => {
 
   return (
     <Row gutter={[48, 48]}>
-      <Col span={24} style={{ textAlign: "center" }}>
+      <Col span={24}>
         <HeaderSection title="The Universal DAO Solution for Solana" />
       </Col>
       <Col span={24}>
         <Row className="blend-wrapper">
           <Col span={24} className="blend-wrapper-image">
-            <Image src={multiMachanism} preview={false} />
+            <Image src={multiMechanisms} preview={false} />
           </Col>
           <Col
             span={24}
             className="blend-wrapper-text blend-mode-lighten root-bg"
           >
             <Space direction="vertical">
-              <Typography.Title level={1}>Multiple Mechanism</Typography.Title>
+              <Typography.Title level={1}>Multiple Mechanisms</Typography.Title>
               <Typography.Title level={1}>Automatic Operation</Typography.Title>
               <Typography.Title level={1}>____ No Code</Typography.Title>
             </Space>

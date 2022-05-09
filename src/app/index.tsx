@@ -5,15 +5,14 @@ import { useSelector } from "react-redux";
 import { Col, Row } from "antd";
 import Home from "./home";
 import Header from "./header";
+import Footer from "./footer";
 
 import { AppState } from "store";
+import Watcher from "./watcher";
 
 import "static/styles/dark.less";
 import "static/styles/light.less";
-
 import "./index.less";
-import Watcher from "./watcher";
-import Footer from "./footer";
 
 const App = () => {
   const pageStyles = {

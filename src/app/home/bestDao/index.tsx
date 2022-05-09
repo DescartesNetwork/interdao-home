@@ -47,7 +47,6 @@ const BestDao = () => {
             </Col>
           ))}
         </Row>
-        <Space size={24}></Space>
       </Col>
     </Row>
   );
