@@ -1,6 +1,6 @@
 {
   "name": "interdao-home",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "@craco/craco": "^6.4.3",
@@ -15,9 +15,6 @@
     "@types/react-router-dom": "^5.3.3",
     "antd": "^4.20.0",
     "axios": "^0.26.1",
-    "dotenv-cra": "^3.0.2",
-    "less-loader": "^10.2.0",
-    "postcss-prefixwrap": "^1.29.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-redux": "^8.0.1",
@@ -53,6 +50,11 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3"
+    "dotenv-cra": "^3.0.2",
+    "gh-pages": "^3.2.3",
+    "less": "^4.1.2",
+    "less-loader": "^10.2.0",
+    "postcss": "^8.3.11",
+    "postcss-prefixwrap": "^1.25.0"
   }
 }
