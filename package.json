@@ -28,7 +28,7 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "REACT_APP_ENV=production craco build",
+    "build": "craco build",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
