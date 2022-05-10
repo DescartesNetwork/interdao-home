@@ -1,0 +1,106 @@
+.blend-mode-lighten {
+  mix-blend-mode: lighten;
+}
+
+.blend-mode-darken {
+  mix-blend-mode: darken;
+}
+
+.blend-mode-difference {
+  mix-blend-mode: difference;
+}
+.blend-mode-color {
+  mix-blend-mode: color;
+}
+.blend-wrapper {
+  position: relative;
+  width: 100%;
+  &-image {
+    position: absolute !important;
+    right: 23px;
+    top: 50px;
+    transform: rotate(-8deg);
+    height: 423px;
+    width: 50%;
+    .interdao-home-image {
+      width: 100%;
+      height: 423px;
+      border-radius: 8px;
+      overflow: hidden;
+      &-img {
+        height: 100% !important;
+      }
+    }
+  }
+  &-text {
+    padding-top: 70px;
+    padding-bottom: 100px;
+    h1 {
+      font-size: 96px !important;
+    }
+    .layered-image-left {
+      position: absolute;
+      width: 50%;
+      height: 423px;
+      top: 50px;
+      right: 25px;
+      transform: rotate(-8deg);
+      .interdao-home-space-item,
+      .root-bg {
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+    }
+  }
+}
+
+@media (max-width: 996px) {
+  .blend-wrapper {
+    &-text {
+      h1 {
+        font-size: 70px !important;
+      }
+    }
+    &-image {
+      height: 245px !important;
+      .interdao-home-image {
+        height: 245px !important;
+      }
+    }
+  }
+  .layered-image-left {
+    height: 245px !important;
+  }
+}
+
+@media (max-width: 767.9px) {
+  .blend-wrapper {
+    &-text {
+      h1 {
+        font-size: 50px !important;
+      }
+    }
+    &-image {
+      height: 120px !important;
+      .interdao-home-image {
+        height: 120px !important;
+      }
+    }
+  }
+  .layered-image-left {
+    height: 120px !important;
+  }
+}
+
+#dark {
+  .root-bg {
+    background-color: #1a1311;
+  }
+}
+#light {
+  .root-bg {
+    background-color: #f2efe8;
+  }
+}

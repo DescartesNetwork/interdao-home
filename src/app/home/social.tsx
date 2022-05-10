@@ -1,5 +1,5 @@
 import { Affix, Space } from "antd";
-import IonIcon from "components/icon";
+import IonIcon from "app/components/icon";
 
 const ICON_STYLE = {
   fontSize: 20,
