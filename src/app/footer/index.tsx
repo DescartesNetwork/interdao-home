@@ -13,14 +13,14 @@ const Footer = () => {
   } = useSelector((state: AppState) => state);
   return (
     <Card bordered={false} bodyStyle={{ padding: 56 }} className="footer">
-      <Row gutter={[16, 16]} justify="center">
+      <Row gutter={[16, 16]} justify="center" style={{ textAlign: "center" }}>
         <Col span={24}>
           <Image
             src={theme === "dark" ? LOGO_DARK : LOGO_LIGHT}
             preview={false}
           />
         </Col>
-        <Col xs={20} md={8} lg={5}>
+        <Col>
           <Divider className="footer-divide" />
         </Col>
         <Col span={24}>
@@ -29,9 +29,7 @@ const Footer = () => {
               name={theme === "dark" ? "logo-twitter-color" : "logo-twitter"}
               style={{ fontSize: 32 }}
             />
-            <Typography.Text style={{ fontWeight: 400, fontSize: 32 }}>
-              Twitter
-            </Typography.Text>
+            <Typography.Text style={{ fontSize: 32 }}>Twitter</Typography.Text>
           </Space>
         </Col>
         <Col span={24}>
@@ -40,9 +38,7 @@ const Footer = () => {
               name={theme === "dark" ? "logo-medium-color" : "logo-medium"}
               style={{ fontSize: 32 }}
             />
-            <Typography.Text style={{ fontWeight: 400, fontSize: 32 }}>
-              Medium
-            </Typography.Text>
+            <Typography.Text style={{ fontSize: 32 }}>Medium</Typography.Text>
           </Space>
         </Col>
         <Col span={24}>

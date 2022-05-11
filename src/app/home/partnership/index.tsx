@@ -1,17 +1,18 @@
+import { useMemo } from "react";
+import { useSelector } from "react-redux";
+
 import { Card, Col, Row, Image } from "antd";
 import HeaderSection from "app/components/headerSection";
 
-import SENTRE from "static/images/partnership/sentre.svg";
-import KYLAN from "static/images/partnership/kylan.svg";
-import COIN98 from "static/images/partnership/coin98.svg";
-import SENTRE_LIGHT from "static/images/partnership/sentre-light.svg";
-import COIN98_LIGHT from "static/images/partnership/coin98-light.svg";
-import { useSelector } from "react-redux";
 import { AppState } from "store";
-import { useMemo } from "react";
 
-const LOGO_PARTNERSHIPS_LIGHT = [SENTRE_LIGHT, KYLAN, COIN98_LIGHT];
-const LOGO_PARTNERSHIPS_DARK = [SENTRE, KYLAN, COIN98];
+import DESCARTES_DARK from "static/images/partnership/desNet-dark.svg";
+import DESCARTES_LIGHT from "static/images/partnership/desNet-light.svg";
+import SENTRE_DARK from "static/images/partnership/sentre-dark.svg";
+import SENTRE_LIGHT from "static/images/partnership/sentre-light.svg";
+
+const LOGO_PARTNERSHIPS_LIGHT = [SENTRE_LIGHT, DESCARTES_LIGHT];
+const LOGO_PARTNERSHIPS_DARK = [SENTRE_DARK, DESCARTES_DARK];
 
 const Partnership = () => {
   const {
@@ -40,9 +41,9 @@ const Partnership = () => {
             padding: 56,
           }}
         >
-          <Row gutter={[96, 32]}>
+          <Row gutter={[96, 32]} align="middle">
             {partnerships.map((logo, index) => (
-              <Col xs={24} md={8} key={index}>
+              <Col xs={24} md={12} key={index}>
                 <Image src={logo} preview={false} />
               </Col>
             ))}

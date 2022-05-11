@@ -31,7 +31,25 @@ const Solution = () => {
             <Space direction="vertical">
               <Typography.Title level={1}>Multiple Mechanisms</Typography.Title>
               <Typography.Title level={1}>Automatic Operation</Typography.Title>
-              <Typography.Title level={1}>____ No Code</Typography.Title>
+              <Typography.Title level={1}>
+                <svg
+                  width="235"
+                  height="6"
+                  viewBox="0 0 235 6"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  style={{ verticalAlign: "middle" }}
+                >
+                  <line
+                    y1="3"
+                    x2="235"
+                    y2="3"
+                    stroke={theme === "dark" ? "#F9DEB0" : "#1A1311"}
+                    stroke-width="6"
+                  />
+                </svg>
+                No Code
+              </Typography.Title>
             </Space>
             <Space
               className={`layered-image-left pointer-events-none blend-mode-${BLEND_MODE[theme]}`}

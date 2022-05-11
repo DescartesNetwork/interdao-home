@@ -47,18 +47,25 @@ const RegimeCard = ({ title, desc, bg }: RegimeCardProps) => {
         />
       </Col>
       <Col span={24}>
-        <Space direction="vertical">
+        <Space direction="vertical" style={{ minHeight: 100 }}>
           <Typography.Title level={1}>{title}</Typography.Title>
-          <Typography.Text type="secondary">{desc}</Typography.Text>
+          <Typography.Paragraph
+            style={{ marginBottom: 0 }}
+            ellipsis={{ rows: 2 }}
+            type="secondary"
+          >
+            {desc}
+          </Typography.Paragraph>
         </Space>
       </Col>
       <Col span={24}>
         <Space
           style={{ cursor: "pointer" }}
           onClick={() => window.open(INTERDAO_URL, "_blank")}
+          className="regimes-text"
         >
           <Typography.Text underline>Get started</Typography.Text>
-          <IonIcon name="arrow-forward-outline" />
+          <IonIcon className="regimes-arrow" name="arrow-forward-outline" />
         </Space>
       </Col>
     </Row>

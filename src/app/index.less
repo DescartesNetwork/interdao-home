@@ -13,7 +13,6 @@ body {
   padding-top: 48px;
   &-header {
     font-size: 40px !important;
-    border-bottom: solid 1px #1a1311 !important;
   }
 
   &_title {
@@ -22,8 +21,9 @@ body {
     line-height: 120% !important;
 
     &-spec_word--1 {
-      color: #f9deb0 !important;
+      color: #ccab72 !important;
       position: relative;
+      font-weight: 700 !important;
       cursor: pointer;
 
       &:hover {
@@ -98,6 +98,16 @@ body {
   }
 }
 
+//Regimes
+.regimes {
+  &-text:hover .regimes-arrow {
+    transform: translateX(10px);
+  }
+  &-arrow {
+    transition: all 0.2s linear;
+  }
+}
+
 //Footer
 .footer {
   background: #f0ece6 !important;
@@ -105,8 +115,9 @@ body {
   text-align: center;
   margin-top: 172px !important;
   &-divide {
-    border: solid 1px #1a1311 !important;
+    border: solid 0.5px #1a1311 !important;
     margin: 0 !important;
+    min-width: 202px !important;
   }
 }
 
@@ -127,9 +138,6 @@ body {
 
 #dark {
   .banner {
-    &-header {
-      border-bottom: solid 1px #f9deb0 !important;
-    }
     &_title {
       &-spec_word--2 {
         &::after {
@@ -144,7 +152,7 @@ body {
   .footer {
     background: #0f0806 !important;
     &-divide {
-      border: solid 1px #f9deb0 !important;
+      border-color: #f9deb0 !important;
     }
   }
 }
