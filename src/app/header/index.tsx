@@ -1,13 +1,15 @@
 import { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { Col, Image, Row } from "antd";
+import { Col, Image, Row, Space, Typography } from "antd";
 import IonIcon from "app/components/icon";
+
+import { AppDispatch, AppState } from "store";
+import { setTheme, Theme } from "store/ui.reducer";
+import { INTERDAO_URL } from "app/constants";
 
 import LOGO_LIGHT from "static/images/logo-light.svg";
 import LOGO_DARK from "static/images/logo-dark.svg";
-import { AppDispatch, AppState } from "store";
-import { setTheme, Theme } from "store/ui.reducer";
 
 const Header = () => {
   const { theme } = useSelector((state: AppState) => state.ui);
@@ -33,11 +35,20 @@ const Header = () => {
         />
       </Col>
       <Col>
-        <IonIcon
-          onClick={onThemeChange}
-          name={isDarkMode ? "sunny" : "moon"}
-          style={{ fontSize: 28, cursor: "pointer" }}
-        />
+        <Space size={32}>
+          <IonIcon
+            onClick={onThemeChange}
+            name={isDarkMode ? "sunny" : "moon"}
+            style={{ fontSize: 28, cursor: "pointer" }}
+          />
+          <Typography.Text
+            style={{ fontWeight: 500, fontSize: 16, cursor: "pointer" }}
+            underline
+            onClick={() => window.open(INTERDAO_URL, "_blank")}
+          >
+            Explore
+          </Typography.Text>
+        </Space>
       </Col>
     </Row>
   );
