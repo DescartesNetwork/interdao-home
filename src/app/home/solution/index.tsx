@@ -4,6 +4,7 @@ import { Col, Row, Image, Space, Typography } from "antd";
 import HeaderSection from "app/components/headerSection";
 
 import { AppState } from "store";
+import { Theme } from "store/ui.reducer";
 
 import multiMechanisms from "static/images/multi-mechanisms.png";
 
@@ -11,8 +12,48 @@ import "./index.less";
 
 const BLEND_MODE = { dark: "color", light: "difference" };
 
+const Line = ({ isMobile, theme }: { isMobile: boolean; theme: Theme }) => {
+  if (!isMobile)
+    return (
+      <svg
+        width="235"
+        height="6"
+        viewBox="0 0 235 6"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style={{ verticalAlign: "middle" }}
+      >
+        <line
+          y1="3"
+          x2="235"
+          y2="3"
+          stroke={theme === "dark" ? "#F9DEB0" : "#1A1311"}
+          stroke-width="6"
+        />
+      </svg>
+    );
+  return (
+    <svg
+      width="74"
+      height="3"
+      viewBox="0 0 74 3"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <line
+        y1="1.50008"
+        x2="74"
+        y2="1.50008"
+        stroke={theme === "dark" ? "#F9DEB0" : "#1A1311"}
+        stroke-width="3"
+      />
+    </svg>
+  );
+};
+
 const Solution = () => {
-  const { theme } = useSelector((state: AppState) => state.ui);
+  const { theme, width } = useSelector((state: AppState) => state.ui);
+  const isMobile = width < 745;
 
   return (
     <Row gutter={[48, 48]}>
@@ -32,22 +73,7 @@ const Solution = () => {
               <Typography.Title level={1}>Multiple Mechanisms</Typography.Title>
               <Typography.Title level={1}>Automatic Operation</Typography.Title>
               <Typography.Title level={1}>
-                <svg
-                  width="235"
-                  height="6"
-                  viewBox="0 0 235 6"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  style={{ verticalAlign: "middle" }}
-                >
-                  <line
-                    y1="3"
-                    x2="235"
-                    y2="3"
-                    stroke={theme === "dark" ? "#F9DEB0" : "#1A1311"}
-                    stroke-width="6"
-                  />
-                </svg>
+                <Line isMobile={isMobile} theme={theme} />
                 No Code
               </Typography.Title>
             </Space>

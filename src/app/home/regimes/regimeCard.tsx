@@ -1,10 +1,9 @@
+import { useMemo } from "react";
 import { useSelector } from "react-redux";
 
-import { Image, Col, Row, Space, Typography } from "antd";
-import IonIcon from "app/components/icon";
+import { Image, Col, Row, Space, Typography, Card } from "antd";
 
 import { AppState } from "store";
-import { useMemo } from "react";
 import { INTERDAO_URL } from "app/constants";
 
 type RegimeCardProps = {
@@ -35,40 +34,41 @@ const RegimeCard = ({ title, desc, bg }: RegimeCardProps) => {
   }, [width]);
 
   return (
-    <Row gutter={[20, 20]}>
-      <Col span={24}>
-        <Image
-          preview={false}
-          src={bg}
-          style={{
-            height: imgHeight,
-            borderRadius: 4,
-          }}
-        />
-      </Col>
-      <Col span={24}>
-        <Space direction="vertical" style={{ minHeight: 100 }}>
-          <Typography.Title level={1}>{title}</Typography.Title>
-          <Typography.Paragraph
-            style={{ marginBottom: 0 }}
-            ellipsis={{ rows: 2 }}
-            type="secondary"
-          >
-            {desc}
-          </Typography.Paragraph>
-        </Space>
-      </Col>
-      <Col span={24}>
-        <Space
-          style={{ cursor: "pointer" }}
-          onClick={() => window.open(INTERDAO_URL, "_blank")}
-          className="regimes-text"
-        >
+    <Card
+      bordered={false}
+      bodyStyle={{ padding: 0 }}
+      style={{ background: "transparent" }}
+      className="card-regime"
+      onClick={() => window.open(INTERDAO_URL, "_blank")}
+    >
+      <Row gutter={[20, 20]}>
+        <Col span={24}>
+          <Image
+            preview={false}
+            src={bg}
+            style={{
+              height: imgHeight,
+              borderRadius: 4,
+            }}
+          />
+        </Col>
+        <Col span={24}>
+          <Space direction="vertical" style={{ minHeight: 100 }}>
+            <Typography.Title level={1}>{title}</Typography.Title>
+            <Typography.Paragraph
+              style={{ marginBottom: 0 }}
+              ellipsis={{ rows: 2 }}
+              type="secondary"
+            >
+              {desc}
+            </Typography.Paragraph>
+          </Space>
+        </Col>
+        <Col span={24}>
           <Typography.Text underline>Get started</Typography.Text>
-          <IonIcon className="regimes-arrow" name="arrow-forward-outline" />
-        </Space>
-      </Col>
-    </Row>
+        </Col>
+      </Row>
+    </Card>
   );
 };
 

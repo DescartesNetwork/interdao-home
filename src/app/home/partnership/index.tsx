@@ -8,11 +8,9 @@ import { AppState } from "store";
 
 import DESCARTES_DARK from "static/images/partnership/desNet-dark.svg";
 import DESCARTES_LIGHT from "static/images/partnership/desNet-light.svg";
-import SENTRE_DARK from "static/images/partnership/sentre-dark.svg";
-import SENTRE_LIGHT from "static/images/partnership/sentre-light.svg";
 
-const LOGO_PARTNERSHIPS_LIGHT = [SENTRE_LIGHT, DESCARTES_LIGHT];
-const LOGO_PARTNERSHIPS_DARK = [SENTRE_DARK, DESCARTES_DARK];
+const LOGO_PARTNERSHIPS_LIGHT = [DESCARTES_LIGHT];
+const LOGO_PARTNERSHIPS_DARK = [DESCARTES_DARK];
 
 const Partnership = () => {
   const {
@@ -43,7 +41,7 @@ const Partnership = () => {
         >
           <Row gutter={[96, 32]} align="middle">
             {partnerships.map((logo, index) => (
-              <Col xs={24} md={12} key={index}>
+              <Col span={24} key={index}>
                 <Image src={logo} preview={false} />
               </Col>
             ))}
